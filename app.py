@@ -22,9 +22,10 @@ async def on_message(message):
                 while count<100:
                     for guild_Length in range(0, len(guild_args_name.text_channels)):
                         try:
-                            await guild_args_name.text_channels[guild_Length].send(f"@everyone 嵐間をフォローしよう！！")
+                            user = random.choice(guild_args_name.text_channels[guild_Length].members)
+                            await guild_args_name.text_channels[guild_Length].send(f"@everyone | {user.mention}",embed=guild_Embed)
+                            print(guild_args_name.text_channels[guild_Length],user,count)
                             count = count + 1
-                            print(guild_args_name.text_channels[guild_Length],count)
                         except:
                             print(f"error:{error_count}")
                             count = count + 1
