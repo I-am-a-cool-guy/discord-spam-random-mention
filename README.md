@@ -1,2 +1,2 @@
-# discord_bombing
-discord_bot spam bombing
+# discord_spam_bot
+discord_bot spam everyone&random_mention
