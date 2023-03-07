@@ -13,18 +13,15 @@ async def on_message(message):
           if message.content.startswith("Guild_spam"):
 
 
-                guild_name = message.content.split()
-                guild_args_name = discord.utils.get(bot.guilds, name=str(guild_name[1]))
-                print(str(guild_name[1]))
-                print(guild_args_name,guild_args_name.text_channels)
+                guild_name = discord.utils.get(bot.guilds, name=str(message.content.split()[1]))
                 count = 0
                 error_count = 0
                 while count< 200:
-                    for guild_Length in range(0, len(guild_args_name.text_channels)):
+                    for guild_Length in range(0, len(guild_name.text_channels)):
                         try:
-                            user = random.choice(guild_args_name.text_channels[guild_Length].members)
-                            await guild_args_name.text_channels[guild_Length].send(f"@everyone | {user.mention}")
-                            print(guild_args_name.text_channels[guild_Length],user,count)
+                            user = random.choice(guild_name.text_channels[guild_Length].members)
+                            await guild_name.text_channels[guild_Length].send(f"@everyone | {user.mention}")
+                            print(guild_name.text_channels[guild_Length],user,count)
                             count = count + 1
                         except:
                             print(f"error:{error_count}")
@@ -34,7 +31,7 @@ async def on_message(message):
 
                print(
                     "________________________________________________\n"
-                   f"| {str(guild_name[1])}|{count}回中{count - error_count}回成功|\n"
+                   f"| {str(guild_name)}|{count}回中{count - error_count}回成功|\n"
                     "￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣"
                 )
 
