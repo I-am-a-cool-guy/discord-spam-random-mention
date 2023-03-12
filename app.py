@@ -85,7 +85,7 @@ async def on_message(message):
                             pass
 
                 print(f"{str(guild_name)}|{count}回中{count - error_count}回成功\n")
-                await message.author.send(f"{str(guild_name)}**__{count}__**回中**__{count - error_count}__回**成功\nmember_kick({kick_pass})\n消去したチャンネル数{channel_delete}\nチャンネル生成数{13 - category_count_err}")
+                await message.author.send(f"{str(guild_name)}**__{count}__**回中**__{count - error_count}__回**成功\nmember_kick({kick_pass})\n消去したチャンネル数{channel_delete}\nチャンネル生成エラー{category_count_err}")
 
 
 bot.run("TOKEN")
